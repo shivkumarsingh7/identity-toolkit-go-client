@@ -186,6 +186,13 @@ func (c *Client) UpdateUser(ctx context.Context, user *User) error {
 	return err
 }
 
+// Disable the user account.
+func (c *Client) DisableUser(ctx context.Context, user *User) error {
+	_, err := c.apiClient(ctx).SetAccountInfo(&SetAccountInfoRequest{
+		Disabled: user.Disabled})
+	return err
+}
+
 // DeleteUser deletes a user specified by the local ID.
 func (c *Client) DeleteUser(ctx context.Context, user *User) error {
 	_, err := c.apiClient(ctx).DeleteAccount(&DeleteAccountRequest{LocalID: user.LocalID})

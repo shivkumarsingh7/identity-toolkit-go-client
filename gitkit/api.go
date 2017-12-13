@@ -229,6 +229,8 @@ type SetAccountInfoRequest struct {
 	DisplayName   string `json:"displayName,omitempty"`
 	Password      string `json:"password,omitempty"`
 	EmailVerified bool   `json:"emailVerified,omitempty"`
+	//Disable user
+	Disabled bool `json:"disabled,omitempty"`
 }
 
 // SetAccountInfoResponse is the response for a SetAccountInfoRequest upon success.
