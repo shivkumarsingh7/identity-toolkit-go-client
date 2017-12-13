@@ -182,7 +182,7 @@ func (c *Client) UpdateUser(ctx context.Context, user *User) error {
 		Email:         user.Email,
 		DisplayName:   user.DisplayName,
 		Password:      user.Password,
-		EmailVerified: user.EmailVerified
+		EmailVerified: user.EmailVerified,
 		Disabled:	   user.Disabled})
 	return err
 }
