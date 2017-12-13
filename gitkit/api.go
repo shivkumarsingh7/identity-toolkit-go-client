@@ -103,6 +103,8 @@ type User struct {
 	ProviderID string `json:"providerId,omitempty"`
 	// Password is the raw password of the user. It is only used to set new password.
 	Password string `json:"-"`
+	//Disable user
+	Disabled bool `json:"disabled,omitempty"`
 }
 
 // IdpConfig holds the IDP configuration.
@@ -229,8 +231,6 @@ type SetAccountInfoRequest struct {
 	DisplayName   string `json:"displayName,omitempty"`
 	Password      string `json:"password,omitempty"`
 	EmailVerified bool   `json:"emailVerified,omitempty"`
-	//Disable user
-	Disabled bool `json:"disabled,omitempty"`
 }
 
 // SetAccountInfoResponse is the response for a SetAccountInfoRequest upon success.
